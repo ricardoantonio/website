@@ -1,0 +1,15 @@
+profile = "jinja"
+
+indent = 2
+use_gitignore = true
+
+close_void_tags = true
+format_attribute_template_tags = true
+
+indent_css = 2
+indent_js = 2
+
+max_attribute_length = 70
+
+format_css = true
+format_js = true

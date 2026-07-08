@@ -1,0 +1,26 @@
+base_url = "https://ricardoantonio.com"
+title = "Ricardo Antonio"
+description = "Notas personales sobre código, proyectos y aprendizajes."
+author = "Ricardo Antonio"
+
+default_language = "es"
+
+compile_sass = true
+minify_html = true
+generate_feeds = true
+build_search_index = false
+
+[markdown]
+external_links_class = "external-link"
+external_links_target_blank = true
+definition_list = true
+github_alerts = true
+
+[markdown.highlighting]
+theme = "catppuccin-mocha"
+
+[languages.en]
+title = "Ricardo Antonio"
+description = "Personal notes on code, projects, and what I learn along the way."
+
+generate_feeds = true
