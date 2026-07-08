@@ -1,5 +1,7 @@
 profile = "jinja"
 
+ignore = "H031"
+
 indent = 2
 use_gitignore = true
 

@@ -11,7 +11,8 @@ This repository contains the source code for my personal website, built with
 
 ## Requirements
 
-- Zola
+- [Zola](https://getzola.org)
+- [djLint](https://djlint.com) (optional for formatting)
 
 ## Development
 

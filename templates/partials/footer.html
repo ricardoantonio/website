@@ -1,5 +1,5 @@
 <footer>
-  <p>&copy; {{ now() | date(format="%Y") }} {{ config.author }}</p>
+  <p>© {{ now() | date(format="%Y") }} {{ config.author }}</p>
   <ul>
     {% for media in config.extra.social_links %}
       <li><a href="{{ media.url }}">{{ media.name }}</a></li>
