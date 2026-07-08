@@ -2,12 +2,26 @@
   <a href="{{ get_url(path='/', lang=lang) }}">{{ config.title }}</a>
   <nav aria-label="{{ trans(key='nav_main', lang=lang) }}">
     {% set home = get_section(path='_index.md', lang=lang) %}
+    {% for subsection in home.subsections %}
+      {% set section = get_section(path=subsection, metadata_only=true) %}
+      <a href="{{ section.permalink }}">{{ section.title }}</a>
+    {% endfor %}
     {% for page in home.pages %}
       <a href="{{ page.permalink }}">{{ page.title }}</a>
     {% endfor %}
   </nav>
+  <!-- TODO: Refactor the language selector -->
   <nav aria-label="{{ trans(key='lang_selector', lang=lang) }}">
-    {% if page.translations %}
+    {% if section.translations %}
+      {% for t in section.translations %}
+        {% if t.lang != lang %}
+          <a href="{{ t.permalink }}"
+             hreflang="{{ t.lang }}"
+             lang="{{ lang }}"
+             aria-label="{{ trans(key='view_in_language', lang=lang) }} {{ trans(key=t.lang, lang=lang) }}">{{ lang | upper }}</a>
+        {% endif %}
+      {% endfor %}
+    {% elif page.translations %}
       {% for t in page.translations %}
         {% if t.lang != lang %}
           <a href="{{ t.permalink }}"
