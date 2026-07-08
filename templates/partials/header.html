@@ -18,7 +18,7 @@
           <a href="{{ t.permalink }}"
              hreflang="{{ t.lang }}"
              lang="{{ lang }}"
-             aria-label="{{ trans(key='view_in_language', lang=lang) }} {{ trans(key=t.lang, lang=lang) }}">{{ lang | upper }}</a>
+             aria-label="{{ trans(key='view_in_language', lang=lang) }} {{ trans(key=t.lang, lang=lang) }}">{{ t.lang | upper }}</a>
         {% endif %}
       {% endfor %}
     {% elif page.translations %}
