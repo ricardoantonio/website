@@ -6,7 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <!-- Metadata -->
     <title>{{ config.title }}</title>
-    <meta name="description" content="{{ config.description }}" />
+    <meta name="description"
+          content="{%- if page.description -%} {{ page.description }} {%- else -%} {{ config.description }} {%- endif -%}" />
     <!-- TODO: SEO -->
     <!-- TODO: Feeds -->
     <!-- Resources -->

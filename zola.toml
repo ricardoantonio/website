@@ -48,6 +48,9 @@ generate_feeds = true
 # --- Translations for the default language (es) ---
 [translations]
 
+# --- Header --- 
+nav_main = "Menú principal"
+
 # --- Language selector --- 
 lang_selector = "Selector de idioma"
 view_in_language = "Ver versión en"
@@ -59,6 +62,9 @@ hero_title = "Entre código y un gato que se cree mi dueño"
 
 # --- Translations for English --- 
 [languages.en.translations]
+
+# --- Header --- 
+nav_main = "Main menu"
 
 # --- Language selector ---
 lang_selector = "Language selector"

@@ -1,11 +1,28 @@
 <header>
   <a href="{{ get_url(path='/', lang=lang) }}">{{ config.title }}</a>
-  <nav aria-label="{{ trans(key='lang_selector', lang=lang) }}">
-    {% for code, _ in config.languages %}
-      <a href="{{ get_url(path='/', lang=code) }}"
-         hreflang="{{ code }}"
-         lang="{{ lang }}"
-         aria-label="{{ trans(key='view_in_language', lang=lang) }} {{ trans(key=code, lang=lang) }}">{{ code | upper }}</a>
+  <nav aria-label="{{ trans(key='nav_main', lang=lang) }}">
+    {% set home = get_section(path='_index.md', lang=lang) %}
+    {% for page in home.pages %}
+      <a href="{{ page.permalink }}">{{ page.title }}</a>
     {% endfor %}
+  </nav>
+  <nav aria-label="{{ trans(key='lang_selector', lang=lang) }}">
+    {% if page.translations %}
+      {% for t in page.translations %}
+        {% if t.lang != lang %}
+          <a href="{{ t.permalink }}"
+             hreflang="{{ t.lang }}"
+             lang="{{ lang }}"
+             aria-label="{{ trans(key='view_in_language', lang=lang) }} {{ trans(key=t.lang, lang=lang) }}">{{ lang | upper }}</a>
+        {% endif %}
+      {% endfor %}
+    {% else %}
+      {% for code, _ in config.languages %}
+        <a href="{{ get_url(path='/', lang=code) }}"
+           hreflang="{{ code }}"
+           lang="{{ lang }}"
+           aria-label="{{ trans(key='view_in_language', lang=lang) }} {{ trans(key=code, lang=lang) }}">{{ code | upper }}</a>
+      {% endfor %}
+    {% endif %}
   </nav>
 </header>
