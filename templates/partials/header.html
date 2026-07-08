@@ -1,0 +1,11 @@
+<header>
+  <a href="{{ get_url(path='/', lang=lang) }}">{{ config.title }}</a>
+  <nav aria-label="{{ trans(key='lang_selector', lang=lang) }}">
+    {% for code, _ in config.languages %}
+      <a href="{{ get_url(path='/', lang=code) }}"
+         hreflang="{{ code }}"
+         lang="{{ lang }}"
+         aria-label="{{ trans(key='view_in_language', lang=lang) }} {{ trans(key=code, lang=lang) }}">{{ code | upper }}</a>
+    {% endfor %}
+  </nav>
+</header>

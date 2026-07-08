@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="{{ lang }}">
+  <head>
+    <!-- document -->
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <!-- Metadata -->
+    <title>{{ config.title }}</title>
+    <meta name="description" content="{{ config.description }}" />
+    <!-- TODO: SEO -->
+    <!-- TODO: Feeds -->
+    <!-- Resources -->
+    <link href="{{ get_url(path='main.css') }}" rel="stylesheet" />
+  </head>
+  <body>
+    {% include "partials/header.html" %}
+    <main>
+      {% block content %}
+      {% endblock content %}
+    </main>
+    {% include "partials/footer.html" %}
+  </body>
+</html>

@@ -1,6 +1,6 @@
 base_url = "https://ricardoantonio.com"
 title = "Ricardo Antonio"
-description = "Notas personales sobre código, proyectos y aprendizajes."
+description = "Notas personales sobre código, proyectos y aprendizajes"
 author = "Ricardo Antonio"
 
 default_language = "es"
@@ -19,8 +19,52 @@ github_alerts = true
 [markdown.highlighting]
 theme = "catppuccin-mocha"
 
+[[extra.social_links]]
+name = "GitHub"
+url = "https://github.com/ricardoantonio"
+
+[[extra.social_links]]
+name = "Bluesky"
+url = "https://bsky.app/profile/ricardoantonio.com"
+
+[[extra.social_links]]
+name = "Matrix"
+url = "https://matrix.to/#/@ricardoantonio:matrix.org"
+
+[[extra.social_links]]
+name = "Email"
+url = "mailto:hola@ricardoantonio.com"
+
 [languages.en]
 title = "Ricardo Antonio"
-description = "Personal notes on code, projects, and what I learn along the way."
+description = "Personal notes on code, projects, and what I learn along the way"
 
 generate_feeds = true
+
+################################################################################
+#                                 TRANSLATIONS                                 #
+################################################################################
+
+# --- Translations for the default language (es) ---
+[translations]
+
+# --- Language selector --- 
+lang_selector = "Selector de idioma"
+view_in_language = "Ver versión en"
+es = "español"
+en = "inglés"
+
+# --- home ---
+hero_title = "Entre código y un gato que se cree mi dueño"
+
+# --- Translations for English --- 
+[languages.en.translations]
+
+# --- Language selector ---
+lang_selector = "Language selector"
+view_in_language = "View version in"
+es = "Spanish"
+en = "English"
+
+#--- home --- 
+hero_title = "Between code and a cat who thinks he’s my boss"
