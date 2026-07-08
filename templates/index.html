@@ -1,7 +1,18 @@
 {% extends "base.html" %}
+{% import "macros/post-list.html" as post %}
 {% block content %}
   <section>
     <h1>{{ trans(key='hero_title', lang=lang) }}</h1>
     <p>{{ config.description }}</p>
   </section>
+  {% set blog = get_section(path="blog/_index.md", lang=lang) %}
+  {% set recent_pages = blog.pages | slice(end=5) %}
+  {% if recent_pages | length > 0 %}
+    <section>
+      <h2>{{ trans(key='latest_posts', lang=lang) }}</h2>
+      {{ post::list(pages=recent_pages) }}
+    </section>
+  {% else %}
+    <p>{{ trans(key='no_posts_yet', lang=lang) }}</p>
+  {% endif %}
 {% endblock content %}

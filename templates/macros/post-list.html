@@ -1,0 +1,11 @@
+{# macros/post.list #}
+{% macro list(pages) %}
+  <ol>
+    {% for page in pages %}
+      <li>
+        <time datetime="{{ page.date }}">{{ page.date }}</time>
+        <a href="{{ page.permalink | safe }}">{{ page.title }}</a>
+      </li>
+    {% endfor %}
+  </ol>
+{% endmacro list %}

@@ -1,0 +1,65 @@
+{% extends "base.html" %}
+{% block content %}
+  <header>
+    <a href="{{ get_url(path='blog', lang=lang) }}">{{ trans(key='back_to_blog', lang=lang) }}</a>
+    <h1>{{ page.title }}</h1>
+    {% if page.extra.subtitle %}
+      <p>{{ page.extra.subtitle }}</p>
+    {% endif %}
+    <ul>
+      <!-- date -->
+      <li>
+        {% if page.updated %}
+          <span>{{ trans(key='updated_on', lang=lang) }}</span>
+          <time datetime="{{ page.updated }}">{{ page.updated }}</time>
+        {% else %}
+          <time datetime="{{ page.date }}">{{ page.date }}</time>
+        {% endif %}
+      </li>
+      <!-- Reading time -->
+      {% set reading_time_units = trans(key='reading_time_many', lang=lang) %}
+      {% if page.reading_time == 1 %}
+        {% set reading_time_units = trans(key='reading_time_one', lang=lang) %}
+      {% endif %}
+      {% set reading_time_label = trans(key='reading_time', lang=lang) ~ ": " ~ page.reading_time ~ " " ~ reading_time_units %}
+      <li aria-label="{{ reading_time_label }}"><time datetime="PT{{ page.reading_time }}M">{{ page.reading_time }} {{ reading_time_units }}</time></li>
+      <!-- Language selector -->
+      {% if page.translations | length > 1 %}
+        {% for t in page.translations %}
+          {% if t.lang != lang %}
+            <li>
+              <a href="{{ t.permalink | safe }}"
+                 hreflang="{{ t.lang }}"
+                 lang="{{ t.lang }}">{{ trans(key='read_in', lang=t.lang) }} {{ trans(key=t.lang, lang=t.lang) }}</a>
+            </li>
+          {% endif %}
+        {% endfor %}
+      {% endif %}
+    </ul>
+  </header>
+  {{ page.content | safe }}
+  {% if page.taxonomies.tags or page.updated %}
+    <footer>
+      <dl>
+        {% if page.updated %}
+          <dt>{{ trans(key='published_on', lang=lang) }}</dt>
+          <dd>
+            <time datetime="{{ page.date }}">{{ page.date }}</time>
+          </dd>
+          <dt>{{ trans(key='updated_on', lang=lang) }}</dt>
+          <dd>
+            <time datetime="{{ page.updated }}">{{ page.updated }}</time>
+          </dd>
+        {% endif %}
+        {% if page.taxonomies.tags %}
+          <dt>{{ trans(key='tags',lang=lang) }}</dt>
+          <dd>
+            {% for tag in page.taxonomies.tags %}
+              <a href="{{ get_taxonomy_url(kind='tags', name=tag, lang=page.lang) }}">{{ tag }}</a>
+            {% endfor %}
+          </dd>
+        {% endif %}
+      </dl>
+    </footer>
+  {% endif %}
+{% endblock content %}
