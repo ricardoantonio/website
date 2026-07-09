@@ -5,7 +5,20 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <!-- Metadata -->
-    <title>{{ config.title }}</title>
+    <title>
+      {%- if page.title -%}
+        {{ page.title ~ " | " ~ config.title }}
+      {%- elif section.title -%}
+        {{ section.title ~ " | " ~ config.title }}
+      {%- elif term.name -%}
+        {% set term_name = term.name %}
+        {{ term_name ~  " | " ~ config.title }}
+      {%- elif taxonomy.name -%}
+        {{ trans(key=taxonomy.name, lang=lang) ~  " | " ~ config.title }}
+      {%- else -%}
+        {{ config.title }}
+      {%- endif -%}
+    </title>
     <meta name="description"
           content="{%- if page.description -%} {{ page.description }} {%- else -%} {{ config.description }} {%- endif -%}" />
     <!-- TODO: SEO -->

@@ -23,7 +23,7 @@
              aria-label="{{ trans(key='view_in_language', lang=lang) }} {{ trans(key=t.lang, lang=lang) }}">{{ t.lang | upper }}</a>
         {% endif %}
       {% endfor %}
-    {% elif page.translations | length > 1 %}
+    {% elif page.translations and page.translations | length > 1 %}
       {% for t in page.translations %}
         {% if t.lang != lang %}
           <a href="{{ t.permalink | safe }}"

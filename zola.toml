@@ -10,7 +10,7 @@ minify_html = true
 generate_feeds = true
 build_search_index = false
 
-taxonomies = [{ name = "tags", render = false }]
+taxonomies = [{ name = "tags" }]
 
 [markdown]
 external_links_class = "external-link"
@@ -43,7 +43,7 @@ description = "Personal notes on code, projects, and what I learn along the way"
 
 generate_feeds = true
 
-taxonomies = [{ name = "tags", render = false }]
+taxonomies = [{ name = "tags" }]
 
 ################################################################################
 #                                 TRANSLATIONS                                 #
@@ -68,8 +68,12 @@ latest_posts = "Últimas publicaciones"
 
 # --- blog --- 
 no_posts_yet = "Aún no hay publicaciones."
+
+# --- taxonomies --- 
 tags = "Etiquetas"
 tag = "Etiqueta"
+post_one = "publicación"
+post_many = "publicaciones"
 
 # --- post ---
 back_to_blog = "Volver al blog"
@@ -99,8 +103,12 @@ latest_posts = "Latest posts"
 
 # --- blog --- 
 no_posts_yet = "No posts yet."
+
+# --- taxonomies ---
 tags = "Tags"
 tag = "Tag"
+post_one = "post"
+post_many = "posts"
 
 # --- post ---
 back_to_blog = "Back to blog"
