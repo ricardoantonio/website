@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+{% block content %}
+  <h1>404</h1>
+  <section lang="{{ config.default_language }}">
+    <p>{{ trans(key="not_found") }}</p>
+    <p>{{ trans(key="not_found_description") }}</p>
+  </section>
+  {% for code, _ in config.languages %}
+    <section lang="{{ code }}">
+      <p>{{ trans(key="not_found", lang=code) }}</p>
+      <p>{{ trans(key="not_found_description", lang=code) }}</p>
+    </section>
+  {% endfor %}
+{% endblock content %}

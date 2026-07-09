@@ -86,6 +86,10 @@ written_on = "Escrito el"
 last_updated = "Actualizado por última vez el"
 notes_about = "Parte de mis notas sobre"
 
+# --- 404 ---
+not_found = "Página no encontrada"
+not_found_description = "La página que buscas no existe o puede que haya cambiado de ubicación."
+
 # --- Translations for English --- 
 [languages.en.translations]
 
@@ -122,3 +126,7 @@ updated_on = "Updated on"
 written_on = "Written on"
 last_updated = "Last updated on"
 notes_about = "Part of my notes on"
+
+# --- 404 ---
+not_found = "Page not found"
+not_found_description = "The page you're looking for doesn't exist or may have been moved."
