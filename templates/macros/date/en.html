@@ -1,0 +1,9 @@
+{%- macro format(date, style="short") -%}
+  {%- if style == "full" -%}
+    {{ date | date(format="%A, %B %-d, %Y") }}
+  {%- elif style == "long" -%}
+    {{ date | date(format="%B %-d, %Y") }}
+  {%- else -%}
+    {{ date | date(format="%b %-d, %Y") }}
+  {%- endif -%}
+{%- endmacro -%}

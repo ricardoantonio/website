@@ -80,9 +80,10 @@ back_to_blog = "Volver al blog"
 reading_time = "Tiempo estimado de lectura"
 reading_time_one = "minuto"
 reading_time_many = "minutos"
-published_on = "Publicado el"
 updated_on = "Actualizado el"
-
+written_on = "Escrito el"
+last_updated = "Actualizado por última vez el"
+notes_about = "Parte de mis notas sobre"
 
 # --- Translations for English --- 
 [languages.en.translations]
@@ -115,5 +116,7 @@ back_to_blog = "Back to blog"
 reading_time = "Estimated reading time"
 reading_time_one = "minute"
 reading_time_many = "minutes"
-published_on = "Published on"
 updated_on = "Updated on"
+written_on = "Written on"
+last_updated = "Last updated on"
+notes_about = "Part of my notes on"

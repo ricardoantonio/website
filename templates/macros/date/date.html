@@ -1,0 +1,9 @@
+{% import "macros/date/es.html" as date_es %}
+{% import "macros/date/en.html" as date_en %}
+{%- macro format(date, style="short", lang="es") -%}
+  {%- if lang == "es" -%}
+    {{ date_es::format(date=date, style=style) }}
+  {%- else -%}
+    {{ date_en::format(date=date, style=style) }}
+  {%- endif -%}
+{%- endmacro -%}

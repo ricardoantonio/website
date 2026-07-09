@@ -1,0 +1,30 @@
+{%- macro format(date, style="short") -%}
+  {%- set months = [
+    "enero",
+    "febrero",
+    "marzo",
+    "abril",
+    "mayo",
+    "junio",
+    "julio",
+    "agosto",
+    "septiembre",
+    "octubre",
+    "noviembre",
+    "diciembre"
+  ] -%}
+  {%- set months_short = ["ene", "feb", "mar", "abr", "may", "jun", "jul", "ago", "sep", "oct", "nov", "dic"] -%}
+  {%- set weekdays = ["domingo", "lunes", "martes", "miércoles", "jueves", "viernes", "sábado"] -%}
+  {%- set month = date | date(format="%m") | int -%}
+  {%- set month_idx = month - 1 -%}
+  {%- set weekday = date | date(format="%w") | int -%}
+  {%- set day = date | date(format="%d") | int -%}
+  {%- set year = date | date(format="%Y") -%}
+  {%- if style == "full" -%}
+    {{ weekdays[weekday] }}, {{ day }} de {{ months[month_idx] }} de {{ year }}
+  {%- elif style == "long" -%}
+    {{ day }} de {{ months[month_idx] }} de {{ year }}
+  {%- else -%}
+    {{ day }} {{ months_short[month_idx] }} {{ year }}
+  {%- endif -%}
+{%- endmacro -%}

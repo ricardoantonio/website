@@ -1,9 +1,10 @@
 {# macros/post.list #}
+{% import "macros/date/date.html" as date %}
 {% macro list(pages) %}
   <ol>
     {% for page in pages %}
       <li>
-        <time datetime="{{ page.date }}">{{ page.date }}</time>
+        <time datetime="{{ page.date }}">{{ date::format(date=page.date, lang=lang) }}</time>
         <a href="{{ page.permalink | safe }}">{{ page.title }}</a>
       </li>
     {% endfor %}
