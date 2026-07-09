@@ -12,7 +12,5 @@
       <h2>{{ trans(key='latest_posts', lang=lang) }}</h2>
       {{ post::list(pages=recent_pages) }}
     </section>
-  {% else %}
-    <p>{{ trans(key='no_posts_yet', lang=lang) }}</p>
   {% endif %}
 {% endblock content %}
