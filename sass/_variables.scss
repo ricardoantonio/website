@@ -1,0 +1,114 @@
+:root {
+  /* Primitive colors */
+
+  /* Cream */
+  --cream-50: #FAF8F2;
+  --cream-100: #F4F1EB;
+  --cream-150: #EFEBE4;
+  --cream-200: #E6E1DA;
+  --cream-300: #CFC7BD;
+
+  /* Charcoal */
+  --charcoal-700: #5B5955;
+  --charcoal-900: #222222;
+  --charcoal-925: #23211E;
+  --charcoal-940: #2A2724;
+  --charcoal-950: #1A1917;
+
+  /* Bronze */
+  --bronze-200: #E5D2A7;
+  --bronze-400: #B08F5E;
+  --bronze-700: #6B4E27;
+
+  /* Semantic colors */
+
+  --color-bg: var(--cream-50);
+
+  --color-surface: var(--cream-100);
+  --color-surface-muted: var(--cream-150);
+
+  --color-text: var(--charcoal-900);
+  --color-text-muted: var(--charcoal-700);
+
+  --color-accent: var(--bronze-700);
+  --color-link: var(--bronze-700);
+
+  --color-border: var(--cream-200);
+  --color-selection: var(--bronze-200);
+
+  /* Typography */
+
+  --font-serif: "Source Serif 4 Variable", serif;
+  --font-sans: "Public Sans", sans-serif;
+  --font-mono: "JetBrains Mono", monospace;
+
+  /* Layout */
+
+  --measure: 65ch;
+  /* Ideal reading width */
+  --max-width: 700px;
+  /* Maximum layout width */
+
+  /* Type scale */
+
+  --text-xs: 0.6875rem;
+  --text-sm: clamp(0.8rem, 0.18vi + 0.756rem, 0.844rem);
+  --text-base: clamp(1rem, 0.5vi + 0.875rem, 1.125rem);
+  --text-md: clamp(1.25rem, 1vi + 1.001rem, 1.499rem);
+  --text-lg: clamp(1.5625rem, 1.75vi + 1.126rem, 1.999rem);
+  --text-xl: clamp(1.953rem, 2.85vi + 1.242rem, 2.664rem);
+  --text-2xl: clamp(2.441rem, 4.44vi + 1.331rem, 3.552rem);
+  --text-3xl: clamp(3.05rem, 5.5vi + 1.33rem, 4.74rem);
+
+  /* Line heights */
+
+  --line-height-tight: 1.2;
+  --line-height-normal: 1.5;
+  --line-height-relaxed: 1.7;
+
+  /* Spacing */
+
+  --space-3xs: 0.25rem;
+  --space-2xs: 0.5rem;
+  --space-xs: 0.75rem;
+  --space-sm: 1rem;
+  --space-md: 1.5rem;
+
+  --space-lg: clamp(2rem, 1.5vi + 1.4rem, 3rem);
+  --space-xl: clamp(3rem, 3vi + 1.8rem, 5rem);
+  --space-2xl: clamp(4rem, 5vi + 2rem, 7rem);
+  --space-3xl: clamp(5rem, 8vi + 2rem, 10rem);
+
+  /* Radius */
+
+  --radius-sm: 0.25rem;
+  --radius-md: 0.5rem;
+
+  /* Motion */
+
+  --duration-base: 200ms;
+  --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --color-bg: var(--charcoal-950);
+
+    --color-surface: var(--charcoal-925);
+    --color-surface-muted: var(--charcoal-940);
+
+    --color-text: var(--cream-200);
+    --color-text-muted: var(--cream-300);
+
+    --color-accent: var(--bronze-400);
+    --color-link: var(--bronze-400);
+
+    --color-border: var(--charcoal-940);
+    --color-selection: var(--bronze-700);
+  }
+
+  body {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+}
