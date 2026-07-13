@@ -1,16 +1,18 @@
 {% extends "base.html" %}
 {% block content %}
-  <h1>{{ trans(key=taxonomy.name, lang=lang) }}</h1>
-  <ul>
-    {% for term in terms %}
-      {% set post_unit = trans(key='post_many') %}
-      {% if term.pages |length == 1 %}
-        {% set post_unit = trans(key='post_one') %}
-      {% endif %}
-      <li>
-        <a href="{{ term.permalink | safe }}">{{ term.name }}</a>
-        <span>({{ term.pages | length }} {{ post_unit }})</span>
-      </li>
-    {% endfor %}
-  </ul>
+  <div>
+    <h1>{{ trans(key=taxonomy.name, lang=lang) }}</h1>
+    <ul>
+      {% for term in terms %}
+        {% set post_unit = trans(key='post_many') %}
+        {% if term.pages |length == 1 %}
+          {% set post_unit = trans(key='post_one') %}
+        {% endif %}
+        <li>
+          <a href="{{ term.permalink | safe }}">{{ term.name }}</a>
+          <span>({{ term.pages | length }} {{ post_unit }})</span>
+        </li>
+      {% endfor %}
+    </ul>
+  </div>
 {% endblock content %}

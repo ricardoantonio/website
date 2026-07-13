@@ -38,29 +38,16 @@
           {% endfor %}
         {% endif %}
       </ul>
-    </header>
-    {{ page.content | safe }}
-    {% if page.taxonomies.tags or page.updated %}
-      <footer>
-        <p>
-          {{ trans(key='written_on', lang=lang) }}
-          <time datetime="{{ page.date }}">
-            {{ date::format(date=page.date, lang=lang, style='full') }}.
-          </time>
-          {% if page.updated %}
-            {{ trans(key='last_updated', lang=lang) }}
-            <time datetime="{{ page.updated }}">
-              {{ date::format(date=page.updated, lang=lang, style='long') }}.
-            </time>
-          {%- endif -%}
-          {{ trans(key='notes_about', lang=lang) }}
+      {# TODO: Eval if tags are needed
+      {% if page.taxonomies.tags %}
+        <nav>
           {% for tag in page.taxonomies.tags %}
             <a href="{{ get_taxonomy_url(kind='tags', name=tag, lang=page.lang) }}">{{ tag }}</a>
-            {%- if not loop.last -%}, {%- endif -%}
           {%- endfor -%}
-          .
-        </p>
-      </footer>
-    {% endif %}
+        </nav>
+      {% endif %}
+      #}
+    </header>
+    {{ page.content | safe }}
   </article>
 {% endblock content %}

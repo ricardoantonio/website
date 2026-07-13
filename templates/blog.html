@@ -1,11 +1,13 @@
 {% extends "base.html" %}
 {% import "macros/post-list.html" as post %}
 {% block content %}
-  <h1>{{ section.title }}</h1>
-  {{ section.content | safe }}
-  {% if section.pages | length > 0 %}
-    {{ post::list(pages=section.pages) }}
-  {% else %}
-    <p>{{ trans(key='no_posts_yet', lang=lang) }}</p>
-  {% endif %}
+  <div>
+    <h1>{{ section.title }}</h1>
+    {{ section.content | safe }}
+    {% if section.pages | length > 0 %}
+      {{ post::list(pages=section.pages) }}
+    {% else %}
+      <p>{{ trans(key='no_posts_yet', lang=lang) }}</p>
+    {% endif %}
+  </div>
 {% endblock content %}

@@ -1,8 +1,8 @@
-<footer>
-  <p>© {{ now() | date(format="%Y") }} {{ config.author }}</p>
+<footer class="site-footer">
   <ul>
     {% for media in config.extra.social_links %}
       <li><a href="{{ media.url }}">{{ media.name }}</a></li>
     {% endfor %}
   </ul>
+  <p>© {{ now() | date(format="%Y") }} {{ config.author }}</p>
 </footer>

@@ -82,9 +82,6 @@ reading_time = "Tiempo estimado de lectura"
 reading_time_one = "minuto"
 reading_time_many = "minutos"
 updated_on = "Actualizado el"
-written_on = "Escrito el"
-last_updated = "Actualizado por última vez el"
-notes_about = "Parte de mis notas sobre"
 
 # --- 404 ---
 not_found = "Página no encontrada"
@@ -123,9 +120,6 @@ reading_time = "Estimated reading time"
 reading_time_one = "minute"
 reading_time_many = "minutes"
 updated_on = "Updated on"
-written_on = "Written on"
-last_updated = "Last updated on"
-notes_about = "Part of my notes on"
 
 # --- 404 ---
 not_found = "Page not found"

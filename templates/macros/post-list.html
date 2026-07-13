@@ -1,7 +1,7 @@
 {# macros/post.list #}
 {% import "macros/date/date.html" as date %}
 {% macro list(pages) %}
-  <ol>
+  <ol class="post-list">
     {% for page in pages %}
       <li>
         <time datetime="{{ page.date }}">{{ date::format(date=page.date, lang=lang) }}</time>
