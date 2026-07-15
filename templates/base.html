@@ -2,8 +2,8 @@
 <html lang="{{ lang }}">
   <head>
     <!-- document -->
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- Metadata -->
     <title>
       {%- if page.title -%}
@@ -20,22 +20,22 @@
       {%- endif -%}
     </title>
     <meta name="description"
-          content="{%- if page.description -%} {{ page.description }} {%- else -%} {{ config.description }} {%- endif -%}" />
+          content="{%- if page.description -%} {{ page.description }} {%- else -%} {{ config.description }} {%- endif -%}">
     <!-- SEO -->
     {% include "partials/seo.html" %}
     <!-- Feeds -->
     <link rel="alternate"
           type="application/atom+xml"
           title="{{ trans(key='blog', lang=lang) }}"
-          href="{{ get_url(path='atom.xml', trailing_slash=false, lang=lang) }}" />
+          href="{{ get_url(path='atom.xml', trailing_slash=false, lang=lang) }}">
     <!-- Resources -->
-    <link rel="icon" type="image/png" href="/favicon-96x96.png" sizes="96x96" />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-    <link rel="shortcut icon" href="/favicon.ico" />
-    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
-    <meta name="apple-mobile-web-app-title" content="{{ config.title }}" />
-    <link rel="manifest" href="/site.webmanifest" />
-    <link href="{{ get_url(path='main.css') }}" rel="stylesheet" />
+    <link rel="icon" type="image/png" href="/favicon-96x96.png" sizes="96x96">
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+    <link rel="shortcut icon" href="/favicon.ico">
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <meta name="apple-mobile-web-app-title" content="{{ config.title }}">
+    <link rel="manifest" href="/site.webmanifest">
+    <link href="{{ get_url(path='main.css') }}" rel="stylesheet">
   </head>
   <body>
     {% include "partials/header.html" %}

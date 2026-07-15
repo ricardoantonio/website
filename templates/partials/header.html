@@ -1,17 +1,17 @@
 <header class="site-header">
   <div>
-    <a href="{{ get_url(path='/', lang=lang) }}" class="logo">{{ config.title }}</a>
+    <a href="{{ get_url(path='/', lang=lang) | safe }}" class="logo">{{ config.title }}</a>
   </div>
   <nav aria-label="{{ trans(key='nav_main', lang=lang) }}">
     {% set home = get_section(path='_index.md', lang=lang) %}
     {% for subsection in home.subsections %}
       {% set section = get_section(path=subsection, metadata_only=true) %}
       <a href="{{ section.permalink | safe }}">{{ section.title }}</a>
-      <span aria-hidden="true">&ThinSpace;·&ThinSpace;</span>
+      <span aria-hidden="true">&thinsp;·&thinsp;</span>
     {% endfor %}
     {% for page in home.pages %}
       <a href="{{ page.permalink | safe }}">{{ page.title }}</a>
-      <span aria-hidden="true">&ThinSpace;·&ThinSpace;</span>
+      <span aria-hidden="true">&thinsp;·&thinsp;</span>
     {% endfor %}
     <!-- TODO: Refactor the language selector -->
     {% if section.translations %}
@@ -39,7 +39,7 @@
     {% else %}
       {% for code, _ in config.languages %}
         {% if code != lang %}
-          <a href="{{ get_url(path='/', lang=code) }}"
+          <a href="{{ get_url(path='/', lang=code) | safe }}"
              hreflang="{{ code }}"
              lang="{{ code }}"
              aria-label="{{ trans(key='view_in_language', lang=lang) }} {{ trans(key=code, lang=lang) }}">

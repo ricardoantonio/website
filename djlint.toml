@@ -5,7 +5,7 @@ ignore = "H031"
 indent = 2
 use_gitignore = true
 
-close_void_tags = true
+close_void_tags = false
 format_attribute_template_tags = true
 
 indent_css = 2

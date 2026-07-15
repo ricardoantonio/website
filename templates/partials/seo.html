@@ -6,9 +6,11 @@
   {% set item = false %}
 {% endif %}
 {% if item %}
-  <link rel="canonical" href="{{ item.permalink }}" />
+  <link rel="canonical" href="{{ item.permalink | safe }}">
   {% for t in item.translations %}
-    <link rel="alternate" hreflang="{{ t.lang }}" href="{{ t.permalink }}" />
+    <link rel="alternate"
+          hreflang="{{ t.lang }}"
+          href="{{ t.permalink | safe }}">
   {% endfor %}
   {% set default_url = item.permalink %}
   {% if item.lang != config.default_language %}
@@ -18,5 +20,5 @@
       {% endif %}
     {% endfor %}
   {% endif %}
-  <link rel="alternate" hreflang="x-default" href="{{ default_url }}" />
+  <link rel="alternate" hreflang="x-default" href="{{ default_url | safe }}">
 {% endif %}

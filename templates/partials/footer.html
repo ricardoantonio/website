@@ -1,9 +1,9 @@
 <footer class="site-footer">
   <nav aria-label="{{ trans(key='nav_social', lang=lang) }}">
     {% for media in config.extra.social_links %}
-      <a href="{{ media.url }}">{{ media.name }}</a>
+      <a href="{{ media.url | safe }}" rel="me">{{ media.name }}</a>
       {% if not loop.last %}
-        <span aria-hidden="true">&ThinSpace;·&ThinSpace;</span>
+        <span aria-hidden="true">&thinsp;·&thinsp;</span>
       {% endif %}
     {% endfor %}
   </nav>
