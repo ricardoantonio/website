@@ -19,7 +19,8 @@ definition_list = true
 github_alerts = true
 
 [markdown.highlighting]
-theme = "catppuccin-mocha"
+light_theme = "gruvbox-light-soft"
+dark_theme = "gruvbox-dark-soft"
 
 [[extra.social_links]]
 name = "GitHub"
@@ -55,6 +56,9 @@ taxonomies = [{ name = "tags" }]
 # --- Header --- 
 nav_main = "Menú principal"
 
+# --- Footer --- 
+nav_social = "Enlaces a redes sociales"
+
 # --- Language selector --- 
 lang_selector = "Selector de idioma"
 view_in_language = "Ver versión en"
@@ -78,7 +82,6 @@ post_many = "publicaciones"
 
 # --- post ---
 back_to_blog = "Volver al blog"
-reading_time = "Tiempo estimado de lectura"
 reading_time_one = "minuto"
 reading_time_many = "minutos"
 updated_on = "Actualizado el"
@@ -92,6 +95,9 @@ not_found_description = "La página que buscas no existe o puede que haya cambia
 
 # --- Header --- 
 nav_main = "Main menu"
+
+# --- Footer --- 
+nav_social = "Social links"
 
 # --- Language selector ---
 lang_selector = "Language selector"
@@ -116,7 +122,6 @@ post_many = "posts"
 
 # --- post ---
 back_to_blog = "Back to blog"
-reading_time = "Estimated reading time"
 reading_time_one = "minute"
 reading_time_many = "minutes"
 updated_on = "Updated on"

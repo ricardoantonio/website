@@ -1,8 +1,11 @@
 <footer class="site-footer">
-  <ul>
+  <nav aria-label="{{ trans(key='nav_social', lang=lang) }}">
     {% for media in config.extra.social_links %}
-      <li><a href="{{ media.url }}">{{ media.name }}</a></li>
+      <a href="{{ media.url }}">{{ media.name }}</a>
+      {% if not loop.last %}
+        <span aria-hidden="true">&ThinSpace;·&ThinSpace;</span>
+      {% endif %}
     {% endfor %}
-  </ul>
+  </nav>
   <p>© {{ now() | date(format="%Y") }} {{ config.author }}</p>
 </footer>

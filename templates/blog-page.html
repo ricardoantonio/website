@@ -8,36 +8,35 @@
       {% if page.extra.subtitle %}
         <p>{{ page.extra.subtitle }}</p>
       {% endif %}
-      <ul>
+      <p>
         <!-- date -->
-        <li>
-          {% if page.updated %}
-            <span>{{ trans(key='updated_on', lang=lang) }}</span>
-            <time datetime="{{ page.updated }}">{{ date::format(date=page.updated, lang=lang) }}</time>
-          {% else %}
-            <time datetime="{{ page.date }}">{{ date::format(date=page.date, lang=lang) }}</time>
-          {% endif %}
-        </li>
-        <!-- Reading time -->
-        {% set reading_time_units = trans(key='reading_time_many', lang=lang) %}
-        {% if page.reading_time == 1 %}
-          {% set reading_time_units = trans(key='reading_time_one', lang=lang) %}
+        {% if page.updated %}
+          <span>{{ trans(key='updated_on', lang=lang) }}</span>
+          <time datetime="{{ page.updated }}">{{ date::format(date=page.updated, lang=lang) }}</time>
+        {% else %}
+          <time datetime="{{ page.date }}">{{ date::format(date=page.date, lang=lang) }}</time>
         {% endif %}
-        {% set reading_time_label = trans(key='reading_time', lang=lang) ~ ": " ~ page.reading_time ~ " " ~ reading_time_units %}
-        <li aria-label="{{ reading_time_label }}"><time datetime="PT{{ page.reading_time }}M">{{ page.reading_time }} {{ reading_time_units }}</time></li>
+        <!-- Reading time -->
+        {%- if page.reading_time -%}
+          <span aria-hidden="true">·</span>
+          {% set reading_time_units = trans(key='reading_time_many', lang=lang) %}
+          {% if page.reading_time == 1 %}
+            {% set reading_time_units = trans(key='reading_time_one', lang=lang) %}
+          {% endif %}
+          <time datetime="PT{{ page.reading_time }}M">{{ page.reading_time }} {{ reading_time_units }}</time>
+        {%- endif %}
         <!-- Language selector -->
         {% if page.translations | length > 1 %}
           {% for t in page.translations %}
             {% if t.lang != lang %}
-              <li>
-                <a href="{{ t.permalink | safe }}"
-                   hreflang="{{ t.lang }}"
-                   lang="{{ t.lang }}">{{ trans(key='read_in', lang=t.lang) }} {{ trans(key=t.lang, lang=t.lang) }}</a>
-              </li>
+              <span aria-hidden="true">·</span>
+              <a href="{{ t.permalink | safe }}"
+                 hreflang="{{ t.lang }}"
+                 lang="{{ t.lang }}">{{ trans(key='read_in', lang=t.lang) }} {{ trans(key=t.lang, lang=t.lang) }}</a>
             {% endif %}
           {% endfor %}
         {% endif %}
-      </ul>
+      </p>
       {# TODO: Eval if tags are needed
       {% if page.taxonomies.tags %}
         <nav>

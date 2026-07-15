@@ -3,9 +3,9 @@ title = "Acerca de"
 slug = "acerca-de"
 +++
 
-- [x] Existir.
-- [x] Crear esta página.
-- [ ] Descubrir qué quiero contar.
+☑ Existir. \
+☑ Crear esta página. \
+☐ Descubrir qué quiero contar.
 
 Mientras tanto: [GitHub](https://github.com/ricardoantonio) ·
 [Bluesky](https://bsky.app/profile/ricardoantonio.com) ·
