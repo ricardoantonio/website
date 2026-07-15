@@ -1,5 +1,7 @@
 <header class="site-header">
-  <a href="{{ get_url(path='/', lang=lang) }}" class="logo">{{ config.title }}</a>
+  <div>
+    <a href="{{ get_url(path='/', lang=lang) }}" class="logo">{{ config.title }}</a>
+  </div>
   <nav aria-label="{{ trans(key='nav_main', lang=lang) }}">
     {% set home = get_section(path='_index.md', lang=lang) %}
     {% for subsection in home.subsections %}
