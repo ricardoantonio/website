@@ -1,7 +1,7 @@
 +++
 title = "Starting"
 description = "Reflections on the fear of starting and the decision to share my notes. Every story begins with a blank page. This is mine."
-date = 2026-07-14
+date = 2026-07-13
 slug = "starting"
 taxonomies.tags = ["writing", "reflections"]
 +++
