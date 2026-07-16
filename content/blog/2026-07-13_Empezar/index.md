@@ -8,7 +8,7 @@ taxonomies.tags = ["escritura", "reflexiones"]
 Comenzar algo desde cero siempre es intimidante, o al menos lo ha sido para mí.
 Esa sensación de estar frente a una hoja en blanco, o peor aún, frente a una
 libreta nueva, suele paralizarme. Creo que siempre me ha asustado _empezar mal_,
-porque mi cabeza parece convencida de que existe un comienzo perfecto. Y es
+porque mi cabeza parece convencida de que existe un _comienzo perfecto._ Y es
 justo la búsqueda de ese comienzo perfecto lo que muchas veces termina
 deteniéndome.
 
