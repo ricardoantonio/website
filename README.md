@@ -12,18 +12,44 @@ This repository contains the source code for my personal website, built with
 ## Requirements
 
 - [Zola](https://getzola.org)
-- [djLint](https://djlint.com) (optional for formatting)
+- [just](https://github.com/casey/just) (task runner)
+- [direnv](https://direnv.net) (loads deploy environment variables)
+- [djLint](https://djlint.com) (optional, for formatting)
 
 ## Development
 
-Start the local server:
+Using [just](https://github.com/casey/just):
 
 ```bash
-zola serve
+just serve # local dev server, includes drafts
+just build # production build
 ```
 
-Build the static site:
+Or directly with Zola:
 
 ```bash
+zola serve          # drafts excluded
+zola serve --drafts # drafts included
 zola build
 ```
+
+## Deployment
+
+Deployment uses `rsync` over SSH, configured via environment variables loaded
+with direnv.
+
+1. Copy the example env file and fill in your own values:
+
+   ```bash
+   cp .envrc.example .envrc
+   direnv allow
+   ```
+
+2. Deploy:
+
+   ```bash
+   just deploy
+   ```
+
+Drafts are never included in `zola build`, so `just deploy` is always safe to
+run without accidentally publishing unfinished posts.

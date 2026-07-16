@@ -3,3 +3,6 @@
 
 # Build output
 public/
+
+# Local environment (deploy secrets)
+.envrc

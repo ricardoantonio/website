@@ -1,0 +1,3 @@
+# .envrc.example
+export DEPLOY_HOST=your-ssh-alias
+export DEPLOY_PATH=/var/www/yoursite.com/
