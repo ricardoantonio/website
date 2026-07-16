@@ -58,7 +58,7 @@ nav_social = "Enlaces a redes sociales"
 # --- Language selector --- 
 lang_selector = "Selector de idioma"
 view_in_language = "Ver versión en"
-read_in = "Leer en"
+read_in = "Disponible en"
 es = "español"
 en = "inglés"
 
@@ -98,7 +98,7 @@ nav_social = "Social links"
 # --- Language selector ---
 lang_selector = "Language selector"
 view_in_language = "View version in"
-read_in = "Read in"
+read_in = "Also available in"
 es = "Spanish"
 en = "English"
 

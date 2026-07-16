@@ -1,11 +1,14 @@
 <footer class="site-footer">
-  <nav aria-label="{{ trans(key='nav_social', lang=lang) }}">
-    {% for media in config.extra.social_links %}
-      <a href="{{ media.url | safe }}" rel="me">{{ media.name }}</a>
-      {% if not loop.last %}
-        <span aria-hidden="true">&thinsp;·&thinsp;</span>
-      {% endif %}
-    {% endfor %}
-  </nav>
-  <p>© {{ now() | date(format="%Y") }} {{ config.author }}</p>
+  <hr>
+  <div>
+    <nav aria-label="{{ trans(key='nav_social', lang=lang) }}">
+      {% for media in config.extra.social_links %}
+        <a href="{{ media.url | safe }}" rel="me">{{ media.name }}</a>
+        {% if not loop.last %}
+          <span class="separator" aria-hidden="true">&thinsp;·&thinsp;</span>
+        {% endif %}
+      {% endfor %}
+    </nav>
+    <p class="copy">© {{ now() | date(format="%Y") }} {{ config.author }}</p>
+  </div>
 </footer>
