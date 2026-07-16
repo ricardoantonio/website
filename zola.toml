@@ -18,10 +18,6 @@ external_links_target_blank = true
 definition_list = true
 github_alerts = true
 
-[markdown.highlighting]
-light_theme = "gruvbox-light-soft"
-dark_theme = "gruvbox-dark-soft"
-
 [[extra.social_links]]
 name = "GitHub"
 url = "https://github.com/ricardoantonio"
